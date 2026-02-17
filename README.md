@@ -1,10 +1,25 @@
 # Jayavardhan Patil - Personal Website
 
+⚠️ **SITE IS NOT LIVE YET** - GitHub Pages needs to be enabled in repository settings. See [SETUP.md](SETUP.md) for instructions.
+
 This is my personal website hosted on GitHub Pages.
+
+## 🚀 Quick Start - Make This Site Live
+
+**The site is not live because GitHub Pages is not enabled.** To fix this:
+
+1. Go to [Repository Settings](https://github.com/jayavardhanpatil/jayavardhanpatil.github.io/settings/pages)
+2. Under **Build and deployment** → **Source**:
+   - **Option A (Recommended)**: Select "GitHub Actions"
+   - **Option B (Simpler)**: Select "Deploy from a branch", choose "main" and "/ (root)"
+3. Wait 2-3 minutes for deployment
+4. Visit [https://jayavardhanpatil.github.io](https://jayavardhanpatil.github.io)
+
+For detailed instructions, see [SETUP.md](SETUP.md).
 
 ## 🌐 Live Site
 
-Visit the live site at: [https://jayavardhanpatil.github.io](https://jayavardhanpatil.github.io)
+Once enabled, visit the live site at: [https://jayavardhanpatil.github.io](https://jayavardhanpatil.github.io)
 
 ## 📝 About
 
