@@ -87,7 +87,6 @@
             color: var(--accent-color);
             text-decoration: none;
             cursor: pointer;
-            margin-left: 1rem;
         }
         
         .theme-link:hover {
@@ -164,7 +163,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Jayavardhan Patil <span class="theme-link" id="themeLinkFooter">| Toggle Dark Mode</span></p>
+        <p>&copy; 2026 Jayavardhan Patil | <span class="theme-link" id="themeLinkFooter">Toggle Dark Mode</span></p>
     </footer>
 
     <script>
@@ -193,10 +192,10 @@
         function updateToggleButton(theme) {
             if (theme === 'dark') {
                 themeToggle.textContent = '☀️ Light Mode';
-                themeLinkFooter.textContent = '| Toggle Light Mode';
+                themeLinkFooter.textContent = 'Toggle Light Mode';
             } else {
                 themeToggle.textContent = '🌙 Dark Mode';
-                themeLinkFooter.textContent = '| Toggle Dark Mode';
+                themeLinkFooter.textContent = 'Toggle Dark Mode';
             }
         }
     </script>
