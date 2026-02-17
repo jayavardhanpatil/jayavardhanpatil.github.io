@@ -83,6 +83,16 @@
             color: var(--footer-color);
         }
         
+        .theme-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .theme-link:hover {
+            text-decoration: underline;
+        }
+        
         .theme-toggle {
             position: fixed;
             top: 20px;
@@ -153,12 +163,13 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Jayavardhan Patil</p>
+        <p>&copy; 2026 Jayavardhan Patil | <span class="theme-link" id="themeLinkFooter">Toggle Dark Mode</span></p>
     </footer>
 
     <script>
         // Theme toggle functionality
         const themeToggle = document.getElementById('themeToggle');
+        const themeLinkFooter = document.getElementById('themeLinkFooter');
         const htmlElement = document.documentElement;
         
         // Check for saved theme preference or default to light mode
@@ -166,20 +177,25 @@
         htmlElement.setAttribute('data-theme', currentTheme);
         updateToggleButton(currentTheme);
         
-        themeToggle.addEventListener('click', () => {
+        function toggleTheme() {
             const activeTheme = htmlElement.getAttribute('data-theme');
             const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
             
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateToggleButton(newTheme);
-        });
+        }
+        
+        themeToggle.addEventListener('click', toggleTheme);
+        themeLinkFooter.addEventListener('click', toggleTheme);
         
         function updateToggleButton(theme) {
             if (theme === 'dark') {
                 themeToggle.textContent = '☀️ Light Mode';
+                themeLinkFooter.textContent = 'Toggle Light Mode';
             } else {
                 themeToggle.textContent = '🌙 Dark Mode';
+                themeLinkFooter.textContent = 'Toggle Dark Mode';
             }
         }
     </script>
