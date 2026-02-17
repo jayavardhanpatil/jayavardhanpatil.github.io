@@ -2,60 +2,83 @@
 
 ## What Has Been Done
 
-I've set up the necessary configuration to host your `index.html` file as a GitHub Pages site. Here's what was added:
+This repository is configured to host your `index.html` file as a GitHub Pages site. Here's what's included:
 
 1. **GitHub Actions Workflow** (`.github/workflows/deploy-pages.yml`):
    - Automatically deploys your site to GitHub Pages when changes are pushed to the `main` branch
    - Uses the latest GitHub Actions for Pages deployment
    - Configured with proper permissions and concurrency controls
 
-2. **README.md**:
+2. **Static HTML Site**:
+   - `index.html` - Your personal website
+   - `.nojekyll` - Disables Jekyll processing for faster deployments
+
+3. **README.md**:
    - Documentation for your repository
    - Includes link to your live site
 
-## Next Steps to Complete the Setup
+## ⚠️ IMPORTANT: Required Setup Steps
 
-After this PR is merged to the `main` branch, you need to enable GitHub Pages in your repository settings:
+**GitHub Pages is NOT yet enabled for this repository.** You must enable it manually in GitHub settings:
 
-### Option 1: Enable GitHub Pages with GitHub Actions (Recommended)
+### Step 1: Enable GitHub Pages (Required)
 
 1. Go to your repository on GitHub: `https://github.com/jayavardhanpatil/jayavardhanpatil.github.io`
-2. Click on **Settings** tab
-3. In the left sidebar, click on **Pages**
-4. Under **Source**, select **GitHub Actions** (not "Deploy from a branch")
-5. Save the changes
+2. Click on the **Settings** tab (top menu)
+3. In the left sidebar, scroll down and click on **Pages**
+4. Under **Build and deployment** → **Source**, select **GitHub Actions**
+   - ⚠️ Do NOT select "Deploy from a branch"
+   - Select the dropdown and choose "GitHub Actions"
+5. The page will refresh - you're done! No save button needed.
 
-Once configured, the workflow will automatically run on every push to `main`, and your site will be available at:
-**https://jayavardhanpatil.github.io**
+### Step 2: Verify Deployment
 
-### Option 2: Traditional Branch Deployment (Alternative)
+After enabling GitHub Pages:
 
-If you prefer the traditional approach:
+1. Go to the **Actions** tab in your repository
+2. The "Deploy GitHub Pages" workflow should automatically trigger
+3. Wait for the workflow to complete (usually 1-2 minutes)
+4. Once successful, your site will be live at: **https://jayavardhanpatil.github.io**
+
+## Alternative: Traditional Branch Deployment
+
+If the GitHub Actions option doesn't work or you prefer the traditional approach:
 
 1. Go to repository **Settings** → **Pages**
 2. Under **Source**, select **Deploy from a branch**
 3. Choose **main** branch and **/ (root)** folder
 4. Click **Save**
+5. Wait 1-2 minutes for deployment
 
 Your site will be available at: **https://jayavardhanpatil.github.io**
 
-## Verifying the Deployment
-
-After enabling GitHub Pages:
-
-1. Go to the **Actions** tab in your repository
-2. You should see the "Deploy GitHub Pages" workflow running or completed
-3. Once the workflow completes successfully, your site will be live
-4. Visit `https://jayavardhanpatil.github.io` to see your website
-
 ## Troubleshooting
 
-If the site doesn't appear:
-- Ensure the PR is merged to the `main` branch
-- Check that GitHub Pages is enabled in Settings → Pages
-- Verify the Actions workflow completed successfully
-- It may take a few minutes for the site to be available after the first deployment
+### Site Not Loading?
+
+1. **Check Pages is Enabled**: Settings → Pages → Source should show "GitHub Actions"
+2. **Check Workflow Status**: Actions tab → Look for "Deploy GitHub Pages" workflow
+3. **View Workflow Logs**: Click on the workflow run to see detailed logs
+4. **Wait**: First deployment can take 2-5 minutes
+
+### Workflow Failing?
+
+If you see this error: `Get Pages site failed. Please verify that the repository has Pages enabled`
+- This means you haven't enabled GitHub Pages yet - follow Step 1 above
+
+### Common Issues
+
+- **404 Error**: Pages might not be enabled, or deployment hasn't completed
+- **Old Content**: Clear browser cache or wait a few minutes for CDN to update
+- **Workflow Not Running**: Ensure you're pushing to the `main` branch
 
 ## Making Updates
 
-After the initial setup, any changes pushed to the `main` branch will automatically trigger a new deployment, and your site will be updated within a few minutes.
+After the initial setup, any changes pushed to the `main` branch will automatically trigger a new deployment, and your site will be updated within 2-3 minutes.
+
+## Technical Details
+
+- **Deployment Method**: GitHub Actions (modern approach, faster than Jekyll)
+- **Build Time**: ~30 seconds
+- **Propagation Time**: 1-2 minutes
+- **CDN**: Automatically enabled by GitHub Pages
